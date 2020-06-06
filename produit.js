@@ -2,6 +2,7 @@ const params = (new URL(document.location)).searchParams;
 const produit = params.get('produit'); 
 const id = params.get('id'); 
 const app = document.querySelector(".preview-produit")
+const test = document.querySelector(".preview-produit-description__quantite")
 
 const api = `http://localhost:3000/api/${produit}/${id}`
 
@@ -21,8 +22,37 @@ const article = `
         <h3 class="preview-produit-description__titre">${data.name}</h3>
         <p class="preview-produit-description__description">${data.description}</p>
         <strong class="preview-produit-description__prix">${data.price/100} €</strong>
+        <label for="preview-produit-description__quantite">choisir une quantité:</label>
+        <select class="preview-produit-description__quantite">
+        <option value="1">1</option> 
+        <option value="2" >2</option>
+        <option value="3">3</option>
+        <option value="4">4</option> 
+        <option value="5" >5</option>
+        <option value="6">6</option>
+        <option value="7">7</option> 
+        <option value="8" >8</option>
+        <option value="9">9</option>
+        <option value="10">10</option> 
+        
+      </select>
     </div>
     `
     
     app.innerHTML = article
+    const test = document.querySelector(".preview-produit-description__quantite")
+test.addEventListener('input', function(e) {
+    const prix = document.querySelector(".preview-produit-description__prix")
+
+    let total = (data.price/100) *(test.options.selectedIndex + 1)
+    let nb = test.options.selectedIndex + 1
+        prix.innerHTML = `${total} €`
+    })
+    
+    
+  
     }
+
+
+
+    

@@ -27,6 +27,8 @@ fetch(apiFurniture)
   .then(blob => blob.json())
   .then(data => tabFurniture.push(...data))
 
+  
+
 function afficher(tableau) {
 
   const html = tableau.map(produit => {
@@ -45,6 +47,8 @@ function afficher(tableau) {
   app.innerHTML = html
 
 }
+
+
 
 function remove() {
   while (app.firstChild) {

@@ -108,7 +108,7 @@
             display: grid;
             color: whitesmoke;
             font-size: 1.3em;
-            grid-template-rows: 1fr 5fr 1fr;
+            grid-template-rows: 2fr 3fr 1fr 1fr 1fr;
             padding-left: 50px;
             padding-right: 20px;
             border-radius: 0 5PX 5PX 0;
@@ -121,6 +121,9 @@
             &__prix {
                 justify-self: end;
                 padding-right: 20px;
+            }
+            &__quantite {
+                width: 20%;
             }
 
         }
