@@ -1,0 +1,183 @@
+@keyframes spin {
+  0% {
+    content: "N";
+  }
+  3% {
+    content: "NO";
+  }
+  5% {
+    content: "NOC";
+  }
+  7% {
+    content: "NOCO";
+  }
+  10% {
+    content: "NOCO";
+  }
+  40% {
+    content: "TEDDY";
+  }
+  70% {
+    content: "CAMERA";
+  }
+  100% {
+    content: "FURNITURE";
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.body .header {
+  background-color: #f3e9f1;
+  line-height: 100px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  font-family: "Gochi Hand", cursive;
+  letter-spacing: 2px;
+  border-bottom: 1.5px solid rgba(14, 13, 13, 0.7);
+}
+.body .header .heading {
+  display: flex;
+}
+.body .header .heading__titre {
+  padding-left: 100px;
+  font-size: 3em;
+  vertical-align: sub;
+  color: #9760e6;
+}
+.body .header .heading__logo {
+  margin-left: 50px;
+  width: 10%;
+}
+.body .header .heading__logo img {
+  width: 100%;
+  vertical-align: middle;
+}
+.body .header__panier {
+  justify-self: end;
+  text-decoration: none;
+  padding: 15px 50px 0 0;
+  font-size: 1.4em;
+}
+.body .header__panier:visited {
+  color: #404040;
+}
+.body .header__panier:hover {
+  text-decoration: underline;
+}
+.body .section {
+  background: linear-gradient(#ecdae0, #f3e9f1);
+}
+.body .section .presentation__titre {
+  padding-left: 150px;
+  padding-top: 200px;
+  letter-spacing: 3px;
+  color: #9760e6;
+  font-size: 2.5em;
+  font-family: "Gochi Hand", cursive;
+}
+.body .section .presentation__titre--animation::after {
+  content: "";
+  animation: spin 20s ease-in-out infinite;
+}
+.body .section .presentation__paragraphe {
+  font-size: larger;
+  font-weight: bold;
+  width: 50%;
+  letter-spacing: 1px;
+  margin-left: 200px;
+  margin-top: 100px;
+  color: #404040;
+  line-height: 1.5em;
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+}
+.body .section .liste {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+.body .section .liste .produits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  height: 1200px;
+}
+.body .section .liste .produits .produit {
+  display: flex;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  justify-content: center;
+  margin: 2% 20% 2% 20%;
+  border: 2px ridge rgba(216, 131, 49, 0.7);
+}
+.body .section .liste .produits .produit:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+.body .section .liste .produits .produit .produit-description {
+  margin-right: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  letter-spacing: 1px;
+  text-align: end;
+  color: #404040;
+}
+.body .section .liste .produits .produit .produit-description__titre {
+  text-align: center;
+}
+.body .section .liste .produits img {
+  width: 200px;
+  border-right: 3px solid rgba(192, 186, 186, 0.8);
+}
+.body .section .liste__titre {
+  margin-bottom: 50px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+.body .section .liste .liste-selection {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20% 0 20%;
+}
+.body .section .liste .liste-selection__btn-teddy, .body .section .liste .liste-selection__btn-camera, .body .section .liste .liste-selection__btn-furniture {
+  width: 200px;
+  height: 50px;
+  font-size: 1.15em;
+  cursor: pointer;
+  background-color: #9760e6;
+  border-radius: 2222px 2222px 2222px 2222px;
+  border: 1px solid rgba(192, 186, 186, 0.8);
+  color: whitesmoke;
+  transition: all 0.2s ease-in-out;
+}
+.body .section .liste .liste-selection__btn-teddy:active, .body .section .liste .liste-selection__btn-camera:active, .body .section .liste .liste-selection__btn-furniture:active {
+  outline: none;
+}
+.body .section .liste .liste-selection__btn-teddy:focus, .body .section .liste .liste-selection__btn-camera:focus, .body .section .liste .liste-selection__btn-furniture:focus {
+  outline: none;
+}
+.body .section .liste .liste-selection__btn-teddy--actif, .body .section .liste .liste-selection__btn-camera--actif, .body .section .liste .liste-selection__btn-furniture--actif {
+  width: 200px;
+  height: 50px;
+  font-size: 1em;
+  font-size: 1.2em;
+  border-radius: 2222px 2222px 2222px 2222px;
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: #9760e6;
+  border: 3px solid rgba(192, 186, 186, 0.8);
+}
+.body .section .liste .liste-selection__texte {
+  display: none;
+}
+.body .section .liste .liste-selection__texte--visible {
+  display: block;
+}
+
+/*# sourceMappingURL=style.css.map */
