@@ -67,6 +67,36 @@
 .body .header__panier:hover {
   text-decoration: underline;
 }
+.body .preview-produit {
+  display: flex;
+  padding: 2% 5% 30% 5%;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 10px 10px 1px #f3e9f1;
+  background: linear-gradient(#ecdae0, #f3e9f1);
+}
+.body .preview-produit .preview-produit-description {
+  background-color: rgba(151, 96, 230, 0.9);
+  display: grid;
+  color: whitesmoke;
+  font-size: 1.3em;
+  grid-template-rows: 1fr 5fr 1fr;
+  padding-left: 50px;
+  padding-right: 20px;
+  border-radius: 0 5PX 5PX 0;
+  border: 1px outset rgba(216, 131, 49, 0.7);
+}
+.body .preview-produit .preview-produit-description__titre {
+  padding-top: 10px;
+}
+.body .preview-produit .preview-produit-description__prix {
+  justify-self: end;
+  padding-right: 20px;
+}
+.body .preview-produit__image {
+  width: 500px;
+  justify-self: end;
+  border: 1px outset rgba(151, 96, 230, 0.7);
+}
 .body .section {
   background: linear-gradient(#ecdae0, #f3e9f1);
 }
