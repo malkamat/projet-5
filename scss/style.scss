@@ -108,7 +108,7 @@
             display: grid;
             color: whitesmoke;
             font-size: 1.3em;
-            grid-template-rows: 2fr 3fr 1fr 1fr 1fr;
+            grid-template-rows: 2fr 3fr 1fr 1fr 50px;
             padding-left: 50px;
             padding-right: 20px;
             border-radius: 0 5PX 5PX 0;
@@ -124,7 +124,12 @@
             }
             &__quantite {
                 width: 20%;
-            }
+               
+            } 
+            &__panier {
+                    width: 200px;
+                    cursor: pointer;
+                }
 
         }
         
