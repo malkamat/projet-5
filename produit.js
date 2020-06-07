@@ -7,8 +7,8 @@ const panier = []
 let totalPanier = 0
 
 
- 
-for (let i = 0; i < localStorage.length;i++) {
+
+for (let i = 0; i < localStorage.length; i++) {
 
   panier.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
 
@@ -61,35 +61,30 @@ function afficher(data) {
   const panierBouton = document.querySelector(".preview-produit-description__panier")
   const boutonQuantite = document.querySelector(".preview-produit-description__quantite")
 
-
   boutonQuantite.addEventListener('input', function (e) {
     const prix = document.querySelector(".preview-produit-description__prix")
     const total = (data.price / 100) * (boutonQuantite.options.selectedIndex + 1)
     prix.innerHTML = `${total} €`
-   
-
 
   })
-panierBouton.addEventListener("click", function (e) { 
-     const nb = boutonQuantite.options.selectedIndex + 1
+  panierBouton.addEventListener("click", function (e) {
+    const nb = boutonQuantite.options.selectedIndex + 1
 
     class ObjetPanier {
-      constructor(id,quantite) {
+      constructor(id, quantite,urlImage,price,titre) {
         this.id = id;
         this.quantite = quantite;
+        this.urlImage = urlImage;
+        this.price = price;
+        this.titre = titre;
+
       }
     }
-    let objetPanier = new ObjetPanier(id,nb)
-     localStorage.setItem(id,JSON.stringify(objetPanier))
-  
+    let objetPanier = new ObjetPanier(id, nb,data.imageUrl,data.price/100,data.name)
+    localStorage.setItem(id, JSON.stringify(objetPanier))
+
     window.location = "index.html"
-    
 
-
-     
-
-
- 
   })
-     
+
 }

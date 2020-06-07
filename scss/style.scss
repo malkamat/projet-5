@@ -40,6 +40,17 @@
 
 .body {
 
+    .panier {
+        min-height: 1000px;
+        background: linear-gradient(#ecdae0, #f3e9f1);
+        .ligne-panier {
+            &__image {
+                width: 300px;
+            }
+        }
+
+    }
+
 
     .header {
         background-color: #f3e9f1;
