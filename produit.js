@@ -18,7 +18,7 @@ for (let i = 0; i < panier.length; i++) {
   totalPanier += panier[i].quantite
 }
 
-lienPanier.innerHTML = `Mon Paniere(${totalPanier})`
+lienPanier.innerHTML = `Mon Panier(${totalPanier})`
 
 
 
