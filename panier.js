@@ -1,3 +1,4 @@
+const boutonViderPanier = document.querySelector(".commande__bouton-vider-panier")
 const app = document.querySelector(".panier")
 const lienPanier = document.querySelector(".header__panier")
 const panier = []
@@ -17,8 +18,9 @@ for (let i = 0; i < panier.length; i++) {
 
 lienPanier.innerHTML = `Mon Panier(${totalPanier})`
 
+if (totalPanier !== 0) {
 
-    const html = panier.map(produit => {
+     const html = panier.map(produit => {
       return `
       <article class="ligne-panier" >
                           <img class="ligne-panier__image" src="${produit.urlImage}" alt="image" class="produit__image">
@@ -32,3 +34,11 @@ lienPanier.innerHTML = `Mon Panier(${totalPanier})`
   
     app.innerHTML = html
   
+
+}
+
+boutonViderPanier.addEventListener("click", function(e) {
+    localStorage.clear()
+    window.location = "panier.html"
+})
+   

@@ -32,6 +32,18 @@
 .body .panier {
   min-height: 1000px;
   background: linear-gradient(#ecdae0, #f3e9f1);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.body .panier__vide {
+  grid-column-start: 2;
+  text-align: center;
+  font-size: 3em;
+  padding-top: 100px;
+}
+.body .panier .ligne-panier {
+  justify-self: center;
+  padding-top: 50px;
 }
 .body .panier .ligne-panier__image {
   width: 300px;
