@@ -24,7 +24,7 @@ lienPanier.innerHTML = `Mon Panier(${totalPanier})`
                           <img class="ligne-panier__image" src="${produit.urlImage}" alt="image" class="produit__image">
                           <div class="ligne-panier-description">
                           <h3 class="ligne-panier-description__titre">${produit.titre}</h3>
-                          <strong class="ligne-panier-description__prix">${produit.price} €</strong>
+                          <strong class="ligne-panier-description__prix">${(produit.price)*produit.quantite} €</strong>
                           </div>
                       </article>
       `
