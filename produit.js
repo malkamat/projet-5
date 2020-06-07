@@ -40,7 +40,7 @@ function afficher(data) {
         <h3 class="preview-produit-description__titre">${data.name}</h3>
         <p class="preview-produit-description__description">${data.description}</p>
         <strong class="preview-produit-description__prix">${data.price/100} €</strong>
-        <label for="preview-produit-description__quantite">choisir une quantité:</label>
+        <label for="preview-produit-description__quantite">choisir une quantitée:</label>
         <select class="preview-produit-description__quantite">
         <option value="1" selected>1</option> 
         <option value="2" >2</option>
