@@ -83,6 +83,12 @@
   color: #9760e6;
   border: 3px solid rgba(216, 131, 49, 0.8);
 }
+.body .panier .ligne-panier .ligne-panier-boutons__vider-panier:active, .body .panier .ligne-panier .ligne-panier-boutons__modifier:active {
+  outline: none;
+}
+.body .panier .ligne-panier .ligne-panier-boutons__vider-panier:focus, .body .panier .ligne-panier .ligne-panier-boutons__modifier:focus {
+  outline: none;
+}
 .body .panier .ligne-panier .ligne-panier-description {
   color: #f3e9f1;
   line-height: 3em;

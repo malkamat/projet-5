@@ -92,25 +92,34 @@
                 flex-direction: column;
                 justify-content: space-around;
 
-                &__vider-panier,&__modifier {
+                &__vider-panier,
+                &__modifier {
                     font-weight: bolder;
-                        font-size: 1.2em;
-                        border-radius: 2222px 2222px 2222px 2222px;
-                        cursor: pointer;
-                        background-color: rgb(70, 70, 70);
-                        color: #bebebe;
-                        border: 3px solid rgba(#c0baba, $alpha: 0.8);
-                        margin-right: 30px;
-                        padding: 7px;
-                        transition: all .2s ease-in-out;
-                        &:hover {
-                            background-color: whitesmoke;
-                            color: #9760e6;
-                            border: 3px solid rgba(#d88331, $alpha: 0.8);
+                    font-size: 1.2em;
+                    border-radius: 2222px 2222px 2222px 2222px;
+                    cursor: pointer;
+                    background-color: rgb(70, 70, 70);
+                    color: #bebebe;
+                    border: 3px solid rgba(#c0baba, $alpha: 0.8);
+                    margin-right: 30px;
+                    padding: 7px;
+                    transition: all .2s ease-in-out;
 
-                        }
+                    &:hover {
+                        background-color: whitesmoke;
+                        color: #9760e6;
+                        border: 3px solid rgba(#d88331, $alpha: 0.8);
 
-                        
+                    }
+
+                    &:active {
+                        outline: none;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+
 
 
                 }
