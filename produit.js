@@ -1,6 +1,7 @@
 const params = (new URL(document.location)).searchParams;
 const produit = params.get('produit');
 const id = params.get('id');
+const categorie = params.get("produit")
 const app = document.querySelector(".preview-produit")
 const lienPanier = document.querySelector(".header__panier")
 const panier = []
@@ -19,7 +20,6 @@ for (let i = 0; i < panier.length; i++) {
 }
 
 lienPanier.innerHTML = `Mon Panier(${totalPanier})`
-
 
 
 const api = `http://localhost:3000/api/${produit}/${id}`
@@ -77,13 +77,14 @@ function afficher(data) {
         this.urlImage = urlImage;
         this.price = price;
         this.titre = titre;
+        this.produit = produit;
 
       }
     }
-    let objetPanier = new ObjetPanier(id, nb,data.imageUrl,data.price/100,data.name)
+    let objetPanier = new ObjetPanier(id, nb,data.imageUrl,data.price/100,data.name,produit)
     localStorage.setItem(id, JSON.stringify(objetPanier))
 
-    window.location = "index.html"
+    window.location = "panier.html"
 
   })
 

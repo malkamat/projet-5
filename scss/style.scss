@@ -39,24 +39,92 @@
 }
 
 .body {
+    background: linear-gradient(#ecdae0, #f3e9f1);
+
+    .commande {
+
+        min-height: 1000px;
+
+
+    }
 
     .panier {
-        min-height: 1000px;
-        background: linear-gradient(#ecdae0, #f3e9f1);
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+        letter-spacing: 1px;
+
         &__vide {
             grid-column-start: 2;
             text-align: center;
             font-size: 3em;
             padding-top: 100px;
+            font-family: 'Gochi Hand', cursive;
+            font-family: 'Gochi Hand', cursive;
+
         }
+
+
         .ligne-panier {
-            justify-self: center;
-            padding-top: 50px;
+
+            display: flex;
+            margin-top: 50px;
+            justify-content: space-between;
+
+            margin-left: 100px;
+            margin-right: 20px;
+            font-family: 'Roboto', sans-serif;
+            background-color: rgba(#9760e6, $alpha: 0.9);
+
+
+
+
+
             &__image {
-                width: 300px;
-                
+                height: 150px;
+                border: 2px outset rgba(#d88331, $alpha: 0.7);
+
+
+            }
+
+            .ligne-panier-boutons {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                &__vider-panier,&__modifier {
+                    font-weight: bolder;
+                        font-size: 1.2em;
+                        border-radius: 2222px 2222px 2222px 2222px;
+                        cursor: pointer;
+                        background-color: rgb(70, 70, 70);
+                        color: #bebebe;
+                        border: 3px solid rgba(#c0baba, $alpha: 0.8);
+                        margin-right: 30px;
+                        padding: 7px;
+                        transition: all .2s ease-in-out;
+                        &:hover {
+                            background-color: whitesmoke;
+                            color: #9760e6;
+                            border: 3px solid rgba(#d88331, $alpha: 0.8);
+
+                        }
+
+                        
+
+
+                }
+
+
+            }
+
+            .ligne-panier-description {
+                color: #f3e9f1;
+                line-height: 3em;
+                padding-left: 10px;
+                display: flex;
+                flex-direction: column;
+
             }
         }
 
@@ -126,7 +194,7 @@
 
 
         .preview-produit-description {
-            background-color: rgba( #9760e6, $alpha: 0.9);
+            background-color: rgba(#9760e6, $alpha: 0.9);
             display: grid;
             color: whitesmoke;
             font-size: 1.3em;
@@ -138,23 +206,26 @@
 
             &__titre {
                 padding-top: 10px;
-                
+
             }
+
             &__prix {
                 justify-self: end;
                 padding-right: 20px;
             }
+
             &__quantite {
                 width: 20%;
-               
-            } 
+
+            }
+
             &__panier {
-                    width: 200px;
-                    cursor: pointer;
-                }
+                width: 200px;
+                cursor: pointer;
+            }
 
         }
-        
+
         &__image {
             width: 500px;
             justify-self: end;
@@ -166,11 +237,11 @@
 
 
     .section {
-       
-        
+
+
         background: linear-gradient(#ecdae0, #f3e9f1);
 
-        
+
 
         .presentation {
 
@@ -300,13 +371,13 @@
                     &--actif {
                         width: 200px;
                         height: 50px;
-                        font-size: 1em;
+                        font-weight: bold;
                         font-size: 1.2em;
                         border-radius: 2222px 2222px 2222px 2222px;
                         cursor: pointer;
                         background-color: whitesmoke;
                         color: #9760e6;
-                        border: 3px solid rgba(#c0baba, $alpha: 0.8);
+                        border: 3px solid rgba(#d88331, $alpha: 0.8);
 
                     }
 

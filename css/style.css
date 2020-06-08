@@ -29,24 +29,66 @@
   padding: 0;
 }
 
-.body .panier {
-  min-height: 1000px;
+.body {
   background: linear-gradient(#ecdae0, #f3e9f1);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+}
+.body .commande {
+  min-height: 1000px;
+}
+.body .panier {
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 1px;
 }
 .body .panier__vide {
   grid-column-start: 2;
   text-align: center;
   font-size: 3em;
   padding-top: 100px;
+  font-family: "Gochi Hand", cursive;
+  font-family: "Gochi Hand", cursive;
 }
 .body .panier .ligne-panier {
-  justify-self: center;
-  padding-top: 50px;
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+  margin-left: 100px;
+  margin-right: 20px;
+  font-family: "Roboto", sans-serif;
+  background-color: rgba(151, 96, 230, 0.9);
 }
 .body .panier .ligne-panier__image {
-  width: 300px;
+  height: 150px;
+  border: 2px outset rgba(216, 131, 49, 0.7);
+}
+.body .panier .ligne-panier .ligne-panier-boutons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.body .panier .ligne-panier .ligne-panier-boutons__vider-panier, .body .panier .ligne-panier .ligne-panier-boutons__modifier {
+  font-weight: bolder;
+  font-size: 1.2em;
+  border-radius: 2222px 2222px 2222px 2222px;
+  cursor: pointer;
+  background-color: #464646;
+  color: #bebebe;
+  border: 3px solid rgba(192, 186, 186, 0.8);
+  margin-right: 30px;
+  padding: 7px;
+  transition: all 0.2s ease-in-out;
+}
+.body .panier .ligne-panier .ligne-panier-boutons__vider-panier:hover, .body .panier .ligne-panier .ligne-panier-boutons__modifier:hover {
+  background-color: whitesmoke;
+  color: #9760e6;
+  border: 3px solid rgba(216, 131, 49, 0.8);
+}
+.body .panier .ligne-panier .ligne-panier-description {
+  color: #f3e9f1;
+  line-height: 3em;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
 }
 .body .header {
   background-color: #f3e9f1;
@@ -221,13 +263,13 @@
 .body .section .liste .liste-selection__btn-teddy--actif, .body .section .liste .liste-selection__btn-camera--actif, .body .section .liste .liste-selection__btn-furniture--actif {
   width: 200px;
   height: 50px;
-  font-size: 1em;
+  font-weight: bold;
   font-size: 1.2em;
   border-radius: 2222px 2222px 2222px 2222px;
   cursor: pointer;
   background-color: whitesmoke;
   color: #9760e6;
-  border: 3px solid rgba(192, 186, 186, 0.8);
+  border: 3px solid rgba(216, 131, 49, 0.8);
 }
 .body .section .liste .liste-selection__texte {
   display: none;
