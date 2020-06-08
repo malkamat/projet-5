@@ -1,5 +1,5 @@
-const boutonViderPanier = document.querySelector(".commande__bouton-vider-panier")
-const boutonContinuerAchats = document.querySelector(".commande__bouton-continuer-achats")
+const boutonViderPanier = document.querySelector(".boutons-panier__vider-panier")
+const boutonContinuerAchats = document.querySelector(".boutons-panier__continuer-achats")
 const app = document.querySelector(".panier")
 const lienPanier = document.querySelector(".header__panier")
 const panier = []

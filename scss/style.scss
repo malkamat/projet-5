@@ -41,6 +41,42 @@
 .body {
     background: linear-gradient(#ecdae0, #f3e9f1);
 
+    .boutons-panier {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 100px;
+
+        &__continuer-achats,&__vider-panier {
+            font-weight: bolder;
+                    font-size: 1.2em;
+                    border-radius: 2222px 2222px 2222px 2222px;
+                    cursor: pointer;
+                    background-color: rgb(70, 70, 70);
+                    color: #bebebe;
+                    border: 3px solid rgba(#c0baba, $alpha: 0.8);
+                    margin-right: 30px;
+                    padding: 7px;
+                    transition: all .2s ease-in-out;
+
+                    &:hover {
+                        background-color: whitesmoke;
+                        color: #9760e6;
+                        border: 3px solid rgba(#d88331, $alpha: 0.8);
+
+                    }
+
+                    &:active {
+                        outline: none;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+        }
+        
+        
+    }
+
     .commande {
 
         min-height: 1000px;
