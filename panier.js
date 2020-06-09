@@ -163,7 +163,7 @@ boutonCommander.addEventListener("click", function (e) {
 
   })
 
-localStorage.clear()
+  setTimeout(function(){ window.location = "confirmation.html" }, 1000);
 
 
 })
