@@ -77,7 +77,6 @@ boutonContinuerAchats.addEventListener("click", function (e) {
 
 
 boutonCommander.addEventListener("click", function (e) {
-localStorage.clear()
 
   const nom = document.querySelector(".commande-formulaire__nom")
   const prenom = document.querySelector(".commande-formulaire__prenom")
@@ -164,6 +163,7 @@ localStorage.clear()
 
   })
 
+localStorage.clear()
 
 
 })
