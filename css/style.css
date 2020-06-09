@@ -88,6 +88,7 @@
 .body .panier .ligne-panier__image {
   height: 150px;
   border: 2px outset rgba(216, 131, 49, 0.7);
+  cursor: zoom-in;
 }
 .body .panier .ligne-panier .ligne-panier-boutons {
   display: flex;

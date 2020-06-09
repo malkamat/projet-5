@@ -28,7 +28,34 @@
     </div>
 
     <section class="commande">
+        <form class="commande-formulaire" action="/commander" method="post">
+            <fieldset>
+                 <div >
+                <label for="name"></label>
+                <input class="commande-formulaire__nom" type="text"  name="name" placeholder="Nom" required>
+            </div>
+            <div>
+                <label for="name"></label>
+                <input class="commande-formulaire__prenom" type="text"  name="name" placeholder="Prénom" required>
+            </div>
+            <div >
+                <label for="name"></label>
+                <input class="commande-formulaire__adresse" type="text"  name="user_asdress" placeholder="Adresse" required>
+            </div>
+            <div >
+                <label for="name"></label>
+                <input class="commande-formulaire__ville" type="text"  name="user_city" placeholder="Ville" required>
+            </div>
+            <div >
+                <label for="mail"></label>
+                <input class="commande-formulaire__email" type="email"  name="user_mail" placeholder="Email" required aria-required="true">
+            </div>
+            </fieldset>
+           
 
+            <input class="commande__bouton" type="submit" value="Valider ma commande" />
+            
+        </form>
 
     </section>
 
