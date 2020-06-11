@@ -1,4 +1,3 @@
-
 const recap = document.querySelector(".confirmation-recap")
 const recapTableau = []
 

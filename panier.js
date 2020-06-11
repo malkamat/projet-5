@@ -82,91 +82,100 @@ boutonCommander.addEventListener("click", function (e) {
   const adresse = document.querySelector(".commande-formulaire__adresse")
   const ville = document.querySelector(".commande-formulaire__ville")
   const email = document.querySelector(".commande-formulaire__email")
-  class Contact {
-    constructor(firstName, lastName, address, city, email) {
-      this.firstName = firstName
-      this.lastName = lastName
-      this.address = address
-      this.city = city
-      this.email = email
+  const important = document.querySelector(".commande__important")
+
+  if (!nom.value || !prenom.value || !adresse.value || !ville.value || !email.value) {
+    important.innerHTML = "Veuillez renseigner tous les champs"
+  } else {
+
+    class Contact {
+      constructor(firstName, lastName, address, city, email) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.address = address
+        this.city = city
+        this.email = email
+
+      }
+    }
+    class Order {
+      constructor(contact, products) {
+        this.contact = contact
+        this.products = products
+      }
+    }
+
+
+
+
+
+    const newContact = new Contact(prenom.value, nom.value, adresse.value, ville.value, email.value)
+    console.log(newContact)
+
+
+    const tableauOrderTeddies = []
+    const tableauOrderCameras = []
+    const tableauOrderFurniture = []
+    const orderTeddy = new Order(newContact, tableauOrderTeddies)
+    const orderCamera = new Order(newContact, tableauOrderCameras)
+    const orderFurniture = new Order(newContact, tableauOrderFurniture)
+
+    const commande = async function (data, id) {
+      try {
+
+        let response = await fetch(`http://localhost:3000/api/${id}/order`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+
+
+        })
+        let responseData = await response.json()
+        localStorage.setItem(`confirmation ${id}`, JSON.stringify(responseData))
+        await responseData
+        window.location = "confirmation.html"
+
+
+      } catch (e) {
+        console.error(e)
+      }
 
     }
+    panier.map(element => {
+
+
+      if (element.produit == "teddies") {
+        tableauOrderTeddies.push(element.id)
+        localStorage.removeItem(element.id)
+        commande(orderTeddy, "teddies")
+
+
+
+
+      } else if (element.produit == "cameras") {
+        tableauOrderCameras.push(element.id)
+        localStorage.removeItem(element.id)
+        commande(orderCamera, "cameras")
+
+
+
+      } else if (element.produit == "furniture") {
+        tableauOrderFurniture.push(element.id)
+        localStorage.removeItem(element.id)
+        commande(orderFurniture, "furniture")
+
+      }
+
+
+
+    })
   }
-  class Order {
-    constructor(contact, products) {
-      this.contact = contact
-      this.products = products
-    }
-  }
+
+
   e.preventDefault()
 
-
-
-
-  const newContact = new Contact(prenom.value, nom.value, adresse.value, ville.value, email.value)
-  console.log(newContact)
-
-
-  const tableauOrderTeddies = []
-  const tableauOrderCameras = []
-  const tableauOrderFurniture = []
-  const orderTeddy = new Order(newContact, tableauOrderTeddies)
-  const orderCamera = new Order(newContact, tableauOrderCameras)
-  const orderFurniture = new Order(newContact, tableauOrderFurniture)
-
-  const commande = async function (data, id) {
-    try {
-
-      let response = await fetch(`http://localhost:3000/api/${id}/order`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-
-
-      })
-      let responseData = await response.json()
-      localStorage.setItem(`confirmation ${id}`, JSON.stringify(responseData))
-      await responseData
-      window.location = "confirmation.html"
-
-
-    } catch (e) {
-      console.error(e)
-    }
-
-  }
-  panier.map(element => {
-
-
-    if (element.produit == "teddies") {
-      tableauOrderTeddies.push(element.id)
-      localStorage.removeItem(element.id)
-      commande(orderTeddy, "teddies")
-
-
-
-
-    } else if (element.produit == "cameras") {
-      tableauOrderCameras.push(element.id)
-      localStorage.removeItem(element.id)
-      commande(orderCamera, "cameras")
-
-
-
-    } else if (element.produit == "furniture") {
-      tableauOrderFurniture.push(element.id)     
-       localStorage.removeItem(element.id)
-      commande(orderFurniture, "furniture")
-
-    }
-
-
-
-  })
-
-  // localStorage.setItem("contact",JSON.stringify(newContact))
 
 
 })
