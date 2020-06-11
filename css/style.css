@@ -213,10 +213,9 @@
 }
 .body .preview-produit {
   display: flex;
-  padding: 2% 5% 30% 5%;
+  justify-content: center;
   font-family: "Roboto", sans-serif;
-  box-shadow: 10px 10px 1px #f3e9f1;
-  background: linear-gradient(#ecdae0, #f3e9f1);
+  margin: 100px 50px 0 70px;
 }
 .body .preview-produit .preview-produit-description {
   background-color: rgba(151, 96, 230, 0.9);
@@ -247,9 +246,6 @@
   width: 500px;
   justify-self: end;
   border: 1px outset rgba(151, 96, 230, 0.7);
-}
-.body .section {
-  background: linear-gradient(#ecdae0, #f3e9f1);
 }
 .body .section .presentation__titre {
   padding-left: 150px;
