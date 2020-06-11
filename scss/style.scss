@@ -40,46 +40,115 @@
 
 .body {
     background: linear-gradient(#ecdae0, #f3e9f1);
+    min-height: 1000px;
+
+    .confirmation {
+        &__titre {
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .confirmation-recap {
+            display: flex;
+            flex-direction: column;
+            margin-left: 100px;
+
+            &__id {
+                margin-bottom: 100px;
+            }
+        }
+
+    }
 
     .boutons-panier {
         display: flex;
         justify-content: space-around;
         margin-top: 100px;
 
-        &__continuer-achats,&__vider-panier {
+        &__continuer-achats,
+        &__vider-panier {
             font-weight: bolder;
-                    font-size: 1.2em;
-                    border-radius: 2222px 2222px 2222px 2222px;
-                    cursor: pointer;
-                    background-color: rgb(70, 70, 70);
-                    color: #bebebe;
-                    border: 3px solid rgba(#c0baba, $alpha: 0.8);
-                    margin-right: 30px;
-                    padding: 7px;
-                    transition: all .2s ease-in-out;
+            font-size: 1.2em;
+            border-radius: 2222px 2222px 2222px 2222px;
+            cursor: pointer;
+            background-color: rgb(70, 70, 70);
+            color: #bebebe;
+            border: 3px solid rgba(#c0baba, $alpha: 0.8);
+            margin-right: 30px;
+            padding: 7px;
+            transition: all .2s ease-in-out;
 
-                    &:hover {
-                        background-color: whitesmoke;
-                        color: #9760e6;
-                        border: 3px solid rgba(#d88331, $alpha: 0.8);
+            &:hover {
+                background-color: whitesmoke;
+                color: #9760e6;
+                border: 3px solid rgba(#d88331, $alpha: 0.8);
 
-                    }
+            }
 
-                    &:active {
-                        outline: none;
-                    }
+            &:active {
+                outline: none;
+            }
 
-                    &:focus {
-                        outline: none;
-                    }
+            &:focus {
+                outline: none;
+            }
         }
-        
-        
+
+
     }
 
     .commande {
 
         min-height: 1000px;
+
+        &__bouton {
+            margin-top: 20px;
+            font-weight: bolder;
+            font-size: 1.2em;
+            border-radius: 2222px 2222px 2222px 2222px;
+            cursor: pointer;
+            background-color: rgb(70, 70, 70);
+            color: #bebebe;
+            border: 3px solid rgba(#c0baba, $alpha: 0.8);
+            margin-right: 30px;
+            padding: 7px;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                background-color: whitesmoke;
+                color: #9760e6;
+                border: 3px solid rgba(#d88331, $alpha: 0.8);
+
+            }
+
+            &:active {
+                outline: none;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .commande-formulaire {
+            max-width: 300px;
+            margin-top: 50px;
+            margin-left: 100px;
+            padding: 10px;
+            background-color: rgba(#9760e6, $alpha: 0.9);
+            border: 2px outset rgba(#d88331, $alpha: 0.7);
+
+
+
+
+            &__champ {
+                padding: 2px;
+
+
+
+
+            }
+        }
 
 
     }

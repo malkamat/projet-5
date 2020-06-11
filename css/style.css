@@ -31,6 +31,19 @@
 
 .body {
   background: linear-gradient(#ecdae0, #f3e9f1);
+  min-height: 1000px;
+}
+.body .confirmation__titre {
+  text-align: center;
+  line-height: 200px;
+}
+.body .confirmation .confirmation-recap {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+.body .confirmation .confirmation-recap__id {
+  margin-bottom: 100px;
 }
 .body .boutons-panier {
   display: flex;
@@ -62,6 +75,41 @@
 }
 .body .commande {
   min-height: 1000px;
+}
+.body .commande__bouton {
+  margin-top: 20px;
+  font-weight: bolder;
+  font-size: 1.2em;
+  border-radius: 2222px 2222px 2222px 2222px;
+  cursor: pointer;
+  background-color: #464646;
+  color: #bebebe;
+  border: 3px solid rgba(192, 186, 186, 0.8);
+  margin-right: 30px;
+  padding: 7px;
+  transition: all 0.2s ease-in-out;
+}
+.body .commande__bouton:hover {
+  background-color: whitesmoke;
+  color: #9760e6;
+  border: 3px solid rgba(216, 131, 49, 0.8);
+}
+.body .commande__bouton:active {
+  outline: none;
+}
+.body .commande__bouton:focus {
+  outline: none;
+}
+.body .commande .commande-formulaire {
+  max-width: 300px;
+  margin-top: 50px;
+  margin-left: 100px;
+  padding: 10px;
+  background-color: rgba(151, 96, 230, 0.9);
+  border: 2px outset rgba(216, 131, 49, 0.7);
+}
+.body .commande .commande-formulaire__champ {
+  padding: 2px;
 }
 .body .panier {
   display: flex;

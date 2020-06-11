@@ -82,10 +82,10 @@ boutonTeddy.addEventListener("click", function (e) {
   } else {
     afficher(tabTeddy)
     const produits = document.getElementsByClassName("produit")
-    const x = [...produits]
-    x.forEach(element => element.addEventListener("click", function(e) {
+    const produitSinglePage = [...produits]
+    produitSinglePage.forEach(element => element.addEventListener("click", function(e) {
       const adresse = element.getAttribute("data-key")
-      let adresseActuelle = window.location;
+
       window.location = `produit.html?produit=teddies&id=${adresse}`
     }));
   }
@@ -100,10 +100,10 @@ boutonCamera.addEventListener("click", function (e) {
   } else {
     afficher(tabCamera)
     const produits = document.getElementsByClassName("produit")
-    const x = [...produits]
-    x.forEach(element => element.addEventListener("click", function(e) {
+    const produitSinglePage = [...produits]
+    produitSinglePage.forEach(element => element.addEventListener("click", function(e) {
       const adresse = element.getAttribute("data-key")
-      let adresseActuelle = window.location;
+
       window.location = `produit.html?produit=cameras&id=${adresse}`
     }));
   }
@@ -118,10 +118,10 @@ boutonFurniture.addEventListener("click", function (e) {
   } else {
     afficher(tabFurniture)
     const produits = document.getElementsByClassName("produit")
-    const x = [...produits]
-    x.forEach(element => element.addEventListener("click", function(e) {
+    const produitSinglePage = [...produits]
+    produitSinglePage.forEach(element => element.addEventListener("click", function(e) {
       const adresse = element.getAttribute("data-key")
-      let adresseActuelle = window.location;
+
       window.location = `produit.html?produit=furniture&id=${adresse}`
     }));
 

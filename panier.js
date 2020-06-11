@@ -77,7 +77,6 @@ boutonContinuerAchats.addEventListener("click", function (e) {
 
 
 boutonCommander.addEventListener("click", function (e) {
-
   const nom = document.querySelector(".commande-formulaire__nom")
   const prenom = document.querySelector(".commande-formulaire__prenom")
   const adresse = document.querySelector(".commande-formulaire__adresse")
@@ -100,8 +99,13 @@ boutonCommander.addEventListener("click", function (e) {
     }
   }
   e.preventDefault()
+
+
+
+
   const newContact = new Contact(prenom.value, nom.value, adresse.value, ville.value, email.value)
   console.log(newContact)
+
 
   const tableauOrderTeddies = []
   const tableauOrderCameras = []
@@ -110,60 +114,59 @@ boutonCommander.addEventListener("click", function (e) {
   const orderCamera = new Order(newContact, tableauOrderCameras)
   const orderFurniture = new Order(newContact, tableauOrderFurniture)
 
+  const commande = async function (data, id) {
+    try {
+
+      let response = await fetch(`http://localhost:3000/api/${id}/order`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+
+
+      })
+      let responseData = await response.json()
+      localStorage.setItem(`confirmation ${id}`, JSON.stringify(responseData))
+      await responseData
+      window.location = "confirmation.html"
+
+
+    } catch (e) {
+      console.error(e)
+    }
+
+  }
   panier.map(element => {
+
+
     if (element.produit == "teddies") {
       tableauOrderTeddies.push(element.id)
-      fetch("http://localhost:3000/api/teddies/order", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(orderTeddy)
-
-
-        })
-        .then(blobTeddy => blobTeddy.json())
-        .then(dataTeddy => localStorage.setItem("confimation Teddy", JSON.stringify(dataTeddy)))
+      localStorage.removeItem(element.id)
+      commande(orderTeddy, "teddies")
 
 
 
 
     } else if (element.produit == "cameras") {
       tableauOrderCameras.push(element.id)
-      fetch("http://localhost:3000/api/cameras/order", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(orderCamera)
+      localStorage.removeItem(element.id)
+      commande(orderCamera, "cameras")
 
-
-        })
-        .then(blobCamera => blobCamera.json())
-        .then(dataCamera => localStorage.setItem("confimation Camera", JSON.stringify(dataCamera)))
 
 
     } else if (element.produit == "furniture") {
-      tableauOrderFurniture.push(element.id)
-      fetch("http://localhost:3000/api/furniture/order", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(orderFurniture)
-
-
-        })
-        .then(blobFurniture => blobFurniture.json())
-        .then(dataFurniture => localStorage.setItem("confimation Furniture", JSON.stringify(dataFurniture)))
-
-
+      tableauOrderFurniture.push(element.id)     
+       localStorage.removeItem(element.id)
+      commande(orderFurniture, "furniture")
 
     }
 
+
+
   })
 
-  setTimeout(function(){ window.location = "confirmation.html" }, 1000);
+  // localStorage.setItem("contact",JSON.stringify(newContact))
 
 
 })
