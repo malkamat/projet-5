@@ -55,14 +55,22 @@
     .confirmation {
         &__titre {
             text-align: center;
-            line-height: 200px;
+            margin-top: 50px;
+         
+           
         }
 
         .confirmation-recap {
             display: flex;
             flex-direction: column;
             margin-left: 100px;
-
+            margin-top: 150px;
+            height: 1000px;
+   @media screen and (max-width: 900px) {
+                margin-left: 30px;
+             
+        
+            }
             &__id {
                 margin-bottom: 100px;
             }

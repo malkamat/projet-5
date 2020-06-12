@@ -44,12 +44,19 @@
 }
 .body .confirmation__titre {
   text-align: center;
-  line-height: 200px;
+  margin-top: 50px;
 }
 .body .confirmation .confirmation-recap {
   display: flex;
   flex-direction: column;
   margin-left: 100px;
+  margin-top: 150px;
+  height: 1000px;
+}
+@media screen and (max-width: 900px) {
+  .body .confirmation .confirmation-recap {
+    margin-left: 30px;
+  }
 }
 .body .confirmation .confirmation-recap__id {
   margin-bottom: 100px;
