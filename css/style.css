@@ -1,17 +1,17 @@
 @keyframes spin {
   0% {
-    content: "N";
+    content: "";
   }
   3% {
-    content: "NO";
-  }
-  5% {
-    content: "NOC";
+    content: "N";
   }
   7% {
-    content: "NOCO";
+    content: "NO";
   }
-  10% {
+  11% {
+    content: "NOC";
+  }
+  14% {
     content: "NOCO";
   }
   40% {
@@ -26,12 +26,21 @@
 }
 * {
   margin: 0;
-  padding: 0;
+  margin: 0;
 }
 
 .body {
   background: linear-gradient(#ecdae0, #f3e9f1);
-  min-height: 1000px;
+  min-height: 1400px;
+}
+@media screen and (max-width: 900px) {
+  .body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 0;
+  }
 }
 .body .confirmation__titre {
   text-align: center;
@@ -50,6 +59,12 @@
   justify-content: space-around;
   margin-top: 100px;
 }
+@media screen and (max-width: 900px) {
+  .body .boutons-panier {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .body .boutons-panier__continuer-achats, .body .boutons-panier__vider-panier {
   font-weight: bolder;
   font-size: 1.2em;
@@ -59,7 +74,7 @@
   color: #bebebe;
   border: 3px solid rgba(192, 186, 186, 0.8);
   margin-right: 30px;
-  padding: 7px;
+  margin: 7px;
   transition: all 0.2s ease-in-out;
 }
 .body .boutons-panier__continuer-achats:hover, .body .boutons-panier__vider-panier:hover {
@@ -76,6 +91,11 @@
 .body .commande {
   min-height: 1000px;
 }
+@media screen and (max-width: 900px) {
+  .body .commande {
+    margin-left: 40px;
+  }
+}
 .body .commande__bouton {
   margin-top: 20px;
   font-weight: bolder;
@@ -86,7 +106,7 @@
   color: #bebebe;
   border: 3px solid rgba(192, 186, 186, 0.8);
   margin-right: 30px;
-  padding: 7px;
+  margin: 7px;
   transition: all 0.2s ease-in-out;
 }
 .body .commande__bouton:hover {
@@ -104,23 +124,33 @@
   max-width: 300px;
   margin-top: 50px;
   margin-left: 100px;
-  padding: 10px;
+  margin: 10px;
   background-color: rgba(151, 96, 230, 0.9);
   border: 2px outset rgba(216, 131, 49, 0.7);
 }
+@media screen and (max-width: 900px) {
+  .body .commande .commande-formulaire {
+    margin: 0;
+  }
+}
 .body .commande .commande-formulaire__champ {
-  padding: 2px;
+  margin: 2px;
+}
+.body .commande__important {
+  margin-left: 20px;
+  margin-top: 30px;
+  font-weight: bolder;
+  color: red;
 }
 .body .panier {
-  display: flex;
-  flex-direction: column;
   letter-spacing: 1px;
+  margin-left: 30px;
 }
 .body .panier__vide {
   grid-column-start: 2;
   text-align: center;
   font-size: 3em;
-  padding-top: 100px;
+  margin-top: 100px;
   font-family: "Gochi Hand", cursive;
   font-family: "Gochi Hand", cursive;
 }
@@ -133,10 +163,36 @@
   font-family: "Roboto", sans-serif;
   background-color: rgba(151, 96, 230, 0.9);
 }
+@media screen and (max-width: 900px) {
+  .body .panier .ligne-panier {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .body .panier .ligne-panier {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .body .panier .ligne-panier {
+    margin: 0;
+    margin-top: 50px;
+  }
+}
 .body .panier .ligne-panier__image {
   height: 150px;
   border: 2px outset rgba(216, 131, 49, 0.7);
   cursor: zoom-in;
+}
+@media screen and (max-width: 900px) {
+  .body .panier .ligne-panier__image {
+    height: 250px;
+    width: auto;
+  }
 }
 .body .panier .ligne-panier .ligne-panier-boutons {
   display: flex;
@@ -152,7 +208,7 @@
   color: #bebebe;
   border: 3px solid rgba(192, 186, 186, 0.8);
   margin-right: 30px;
-  padding: 7px;
+  margin: 7px;
   transition: all 0.2s ease-in-out;
 }
 .body .panier .ligne-panier .ligne-panier-boutons__vider-panier:hover, .body .panier .ligne-panier .ligne-panier-boutons__modifier:hover {
@@ -169,41 +225,72 @@
 .body .panier .ligne-panier .ligne-panier-description {
   color: #f3e9f1;
   line-height: 3em;
-  padding-left: 10px;
+  margin-left: 10px;
   display: flex;
   flex-direction: column;
 }
 .body .header {
   background-color: #f3e9f1;
-  line-height: 100px;
   display: grid;
   grid-template-columns: 3fr 1fr;
   font-family: "Gochi Hand", cursive;
   letter-spacing: 2px;
   border-bottom: 1.5px solid rgba(14, 13, 13, 0.7);
 }
+@media screen and (max-width: 900px) {
+  .body .header {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    width: 100%;
+  }
+}
 .body .header .heading {
   display: flex;
 }
 .body .header .heading__titre {
-  padding-left: 100px;
+  margin-left: 100px;
   font-size: 3em;
   vertical-align: sub;
   color: #9760e6;
+}
+@media screen and (max-width: 900px) {
+  .body .header .heading__titre {
+    margin: 0;
+    margin: 0;
+    width: 70%;
+    justify-items: end;
+    margin-left: 40px;
+  }
 }
 .body .header .heading__logo {
   margin-left: 50px;
   width: 10%;
 }
+@media screen and (max-width: 900px) {
+  .body .header .heading__logo {
+    margin: 0;
+  }
+}
 .body .header .heading__logo img {
   width: 100%;
-  vertical-align: middle;
+}
+@media screen and (max-width: 900px) {
+  .body .header .heading__logo img {
+    width: 70px;
+  }
 }
 .body .header__panier {
   justify-self: end;
   text-decoration: none;
-  padding: 15px 50px 0 0;
+  margin: 15px 50px 0 0;
   font-size: 1.4em;
+}
+@media screen and (max-width: 900px) {
+  .body .header__panier {
+    margin: 0;
+    width: 50%;
+  }
 }
 .body .header__panier:visited {
   color: #404040;
@@ -217,23 +304,39 @@
   font-family: "Roboto", sans-serif;
   margin: 100px 50px 0 70px;
 }
+@media screen and (max-width: 900px) {
+  .body .preview-produit {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 20px;
+  }
+}
 .body .preview-produit .preview-produit-description {
   background-color: rgba(151, 96, 230, 0.9);
   display: grid;
   color: whitesmoke;
   font-size: 1.3em;
   grid-template-rows: 2fr 3fr 1fr 1fr 50px;
-  padding-left: 50px;
-  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  margin-right: 20px;
   border-radius: 0 5PX 5PX 0;
   border: 1px outset rgba(216, 131, 49, 0.7);
 }
+@media screen and (max-width: 900px) {
+  .body .preview-produit .preview-produit-description {
+    margin: 0;
+    width: 80%;
+    margin-left: 30px;
+  }
+}
 .body .preview-produit .preview-produit-description__titre {
-  padding-top: 10px;
+  margin-top: 10px;
 }
 .body .preview-produit .preview-produit-description__prix {
   justify-self: end;
-  padding-right: 20px;
+  margin-right: 20px;
 }
 .body .preview-produit .preview-produit-description__quantite {
   width: 20%;
@@ -247,13 +350,23 @@
   justify-self: end;
   border: 1px outset rgba(151, 96, 230, 0.7);
 }
+@media screen and (max-width: 900px) {
+  .body .preview-produit__image {
+    width: 100%;
+  }
+}
 .body .section .presentation__titre {
-  padding-left: 150px;
-  padding-top: 200px;
+  margin-left: 150px;
+  margin-top: 200px;
   letter-spacing: 3px;
   color: #9760e6;
   font-size: 2.5em;
   font-family: "Gochi Hand", cursive;
+}
+@media screen and (max-width: 900px) {
+  .body .section .presentation__titre {
+    margin: 0;
+  }
 }
 .body .section .presentation__titre--animation::after {
   content: "";
@@ -271,25 +384,36 @@
   font-family: "Roboto", sans-serif;
   text-align: justify;
 }
+@media screen and (max-width: 900px) {
+  .body .section .presentation__paragraphe {
+    text-align: justify;
+    margin: 0;
+    width: 100%;
+  }
+}
 .body .section .liste {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
 }
 .body .section .liste .produits {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   font-family: "Roboto", sans-serif;
   height: 1200px;
 }
 .body .section .liste .produits .produit {
+  margin-bottom: 50px;
   display: flex;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   justify-content: center;
   margin: 2% 20% 2% 20%;
   border: 2px ridge rgba(216, 131, 49, 0.7);
+}
+@media screen and (max-width: 900px) {
+  .body .section .liste .produits .produit {
+    display: flex;
+    margin: 0;
+  }
 }
 .body .section .liste .produits .produit:hover {
   transform: scale(1.05);
@@ -320,7 +444,17 @@
   margin-bottom: 100px;
   display: flex;
   justify-content: space-around;
-  padding: 0 20% 0 20%;
+  margin: 0 20% 0 20%;
+}
+@media screen and (max-width: 900px) {
+  .body .section .liste .liste-selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+    margin: 0;
+    margin-bottom: 200px;
+  }
 }
 .body .section .liste .liste-selection__btn-teddy, .body .section .liste .liste-selection__btn-camera, .body .section .liste .liste-selection__btn-furniture {
   width: 200px;

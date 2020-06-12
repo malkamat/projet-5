@@ -3,23 +3,7 @@ const produit = params.get('produit');
 const id = params.get('id');
 const categorie = params.get("produit")
 const app = document.querySelector(".preview-produit")
-const lienPanier = document.querySelector(".header__panier")
-const panier = []
-let totalPanier = 0
 
-
-
-for (let i = 0; i < localStorage.length; i++) {
-
-  panier.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
-
-}
-
-for (let i = 0; i < panier.length; i++) {
-  totalPanier += panier[i].quantite
-}
-
-lienPanier.innerHTML = `Mon Panier(${totalPanier})`
 
 
 const api = `http://localhost:3000/api/${produit}/${id}`
@@ -39,7 +23,7 @@ function afficher(data) {
     <div class="preview-produit-description">
         <h3 class="preview-produit-description__titre">${data.name}</h3>
         <p class="preview-produit-description__description">${data.description}</p>
-        <strong class="preview-produit-description__prix">${data.price/100} €</strong>
+        <strong class="preview-produit-description__prix"> Total :${data.price/100} €</strong>
         <label for="preview-produit-description__quantite">choisir une quantitée:</label>
         <select class="preview-produit-description__quantite">
         <option value="1" selected>1</option> 

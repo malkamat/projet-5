@@ -2,25 +2,23 @@ const boutonViderPanier = document.querySelector(".boutons-panier__vider-panier"
 const boutonContinuerAchats = document.querySelector(".boutons-panier__continuer-achats")
 const boutonCommander = document.querySelector(".commande__bouton")
 const app = document.querySelector(".panier")
-const lienPanier = document.querySelector(".header__panier")
-const panier = []
-let totalPanier = 0
-
-
-
-for (let i = 0; i < localStorage.length; i++) {
-
-  panier.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
-
-}
+const nom = document.querySelector(".commande-formulaire__nom")
+const prenom = document.querySelector(".commande-formulaire__prenom")
+const adresse = document.querySelector(".commande-formulaire__adresse")
+const ville = document.querySelector(".commande-formulaire__ville")
+const email = document.querySelector(".commande-formulaire__email")
+const important = document.querySelector(".commande__important")
+const total = document.querySelector(".commande__total")
+let totalEuros = 0
 
 for (let i = 0; i < panier.length; i++) {
-  totalPanier += panier[i].quantite
+  totalEuros += panier[i].quantite*panier[i].price
+  if (panier.length > 0) {
+    total.innerHTML = `Total de votre commande : ${totalEuros} €`
+
+  }
 }
 
-
-
-lienPanier.innerHTML = `Mon Panier(${totalPanier})`
 
 if (totalPanier !== 0) {
 
@@ -31,7 +29,7 @@ if (totalPanier !== 0) {
                           <div class="ligne-panier-description">
                           <h3 class="ligne-panier-description__titre">${produit.titre}</h3>
                           <strong class="ligne-panier-description__quantitee">quantitée : (${produit.quantite})</strong>
-                          <strong class="ligne-panier-description__prix">Total : ${(produit.price)*produit.quantite} €</strong>
+                          <strong class="ligne-panier-description__prix">Total : ${produit.price*produit.quantite} €</strong>
                           </div>
                           <div class="ligne-panier-boutons">
                           <input class="ligne-panier-boutons__vider-panier" type="button" data-key="${produit.id}" value="Supprimer l'article du panier">
@@ -44,10 +42,10 @@ if (totalPanier !== 0) {
   app.innerHTML = html
 
 
-
-
-
 }
+
+
+
 const boutonSupprimerArticle = document.querySelectorAll(".ligne-panier-boutons__vider-panier")
 const boutonModifierArticle = document.querySelectorAll(".ligne-panier-boutons__modifier")
 
@@ -77,16 +75,14 @@ boutonContinuerAchats.addEventListener("click", function (e) {
 
 
 boutonCommander.addEventListener("click", function (e) {
-  const nom = document.querySelector(".commande-formulaire__nom")
-  const prenom = document.querySelector(".commande-formulaire__prenom")
-  const adresse = document.querySelector(".commande-formulaire__adresse")
-  const ville = document.querySelector(".commande-formulaire__ville")
-  const email = document.querySelector(".commande-formulaire__email")
-  const important = document.querySelector(".commande__important")
+
 
   if (!nom.value || !prenom.value || !adresse.value || !ville.value || !email.value) {
     important.innerHTML = "Veuillez renseigner tous les champs"
-  } else {
+  } else if (panier.length == 0) {
+    important.innerHTML = "Votre panier est bien vide pour passer une commande "
+  }
+   else {
 
     class Contact {
       constructor(firstName, lastName, address, city, email) {
@@ -110,7 +106,6 @@ boutonCommander.addEventListener("click", function (e) {
 
 
     const newContact = new Contact(prenom.value, nom.value, adresse.value, ville.value, email.value)
-    console.log(newContact)
 
 
     const tableauOrderTeddies = []

@@ -1,22 +1,22 @@
 @keyframes spin {
 
     0% {
-        content: "N";
+        content: "";
     }
 
     3% {
-        content: "NO";
-    }
-
-    5% {
-        content: "NOC";
+        content: "N";
     }
 
     7% {
-        content: "NOCO";
+        content: "NO";
     }
 
-    10% {
+    11% {
+        content: "NOC";
+    }
+
+    14% {
         content: "NOCO";
     }
 
@@ -35,12 +35,22 @@
 
 * {
     margin: 0;
-    padding: 0;
+    margin: 0;
+    
 }
 
 .body {
     background: linear-gradient(#ecdae0, #f3e9f1);
-    min-height: 1000px;
+    min-height: 1400px;
+  @media screen and (max-width: 900px) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 0;
+     
+
+    }
 
     .confirmation {
         &__titre {
@@ -64,6 +74,13 @@
         display: flex;
         justify-content: space-around;
         margin-top: 100px;
+        @media screen and (max-width: 900px) {
+            display: flex;
+            flex-direction: column;
+         
+    
+        }
+       
 
         &__continuer-achats,
         &__vider-panier {
@@ -75,8 +92,9 @@
             color: #bebebe;
             border: 3px solid rgba(#c0baba, $alpha: 0.8);
             margin-right: 30px;
-            padding: 7px;
+            margin: 7px;
             transition: all .2s ease-in-out;
+            
 
             &:hover {
                 background-color: whitesmoke;
@@ -100,6 +118,11 @@
     .commande {
 
         min-height: 1000px;
+        @media screen and (max-width: 900px) {
+            margin-left: 40px;
+         
+    
+        }
 
         &__bouton {
             margin-top: 20px;
@@ -111,7 +134,7 @@
             color: #bebebe;
             border: 3px solid rgba(#c0baba, $alpha: 0.8);
             margin-right: 30px;
-            padding: 7px;
+            margin: 7px;
             transition: all .2s ease-in-out;
 
             &:hover {
@@ -134,15 +157,20 @@
             max-width: 300px;
             margin-top: 50px;
             margin-left: 100px;
-            padding: 10px;
+            margin: 10px;
             background-color: rgba(#9760e6, $alpha: 0.9);
             border: 2px outset rgba(#d88331, $alpha: 0.7);
+            @media screen and (max-width: 900px) {
+                margin: 0;
+             
+        
+            }
 
 
 
 
             &__champ {
-                padding: 2px;
+                margin: 2px;
 
 
 
@@ -150,19 +178,27 @@
             }
         }
 
+        &__important {
+            margin-left: 20px;
+            margin-top: 30px;
+            font-weight: bolder;
+            color: rgb(255, 0, 0);
+        }
+
 
     }
 
     .panier {
-        display: flex;
-        flex-direction: column;
+      
         letter-spacing: 1px;
+        margin-left: 30px;
+
 
         &__vide {
             grid-column-start: 2;
             text-align: center;
             font-size: 3em;
-            padding-top: 100px;
+            margin-top: 100px;
             font-family: 'Gochi Hand', cursive;
             font-family: 'Gochi Hand', cursive;
 
@@ -174,11 +210,31 @@
             display: flex;
             margin-top: 50px;
             justify-content: space-between;
+            @media screen and (max-width: 900px) {
+                display: flex;
+                flex-direction: column;
+                width: 60%;
+             
+        
+            }
+            @media screen and (max-width: 600px) {
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+             
+        
+            }
 
             margin-left: 100px;
             margin-right: 20px;
             font-family: 'Roboto', sans-serif;
             background-color: rgba(#9760e6, $alpha: 0.9);
+            @media screen and (max-width: 900px) {
+                margin: 0;
+                margin-top: 50px;
+             
+        
+            }
 
 
 
@@ -188,6 +244,12 @@
                 height: 150px;
                 border: 2px outset rgba(#d88331, $alpha: 0.7);
                 cursor: zoom-in;
+                @media screen and (max-width: 900px) {
+                    height: 250px;
+                    width: auto;
+                 
+            
+                }
 
 
             }
@@ -208,7 +270,7 @@
                     color: #bebebe;
                     border: 3px solid rgba(#c0baba, $alpha: 0.8);
                     margin-right: 30px;
-                    padding: 7px;
+                    margin: 7px;
                     transition: all .2s ease-in-out;
 
                     &:hover {
@@ -236,7 +298,7 @@
             .ligne-panier-description {
                 color: #f3e9f1;
                 line-height: 3em;
-                padding-left: 10px;
+                margin-left: 10px;
                 display: flex;
                 flex-direction: column;
 
@@ -248,32 +310,56 @@
 
     .header {
         background-color: #f3e9f1;
-        line-height: 100px;
         display: grid;
         grid-template-columns: 3fr 1fr;
         font-family: 'Gochi Hand', cursive;
         letter-spacing: 2px;
         border-bottom: 1.5px solid rgba(#0e0d0d, $alpha: 0.7);
+        @media screen and (max-width: 900px) {
+            display: flex;
+            flex-direction: column;
+            text-align: end;
+            width: 100%;
+    
+        }
 
         .heading {
 
             display: flex;
-
+         
             &__titre {
-                padding-left: 100px;
+                margin-left: 100px;
                 font-size: 3em;
                 vertical-align: sub;
                 color: #9760e6;
+                @media screen and (max-width: 900px) {
+                    margin: 0;
+                    margin: 0;
+                    width: 70%;
+                    justify-items: end;
+                    margin-left: 40px;
+                    
+                }
 
             }
 
             &__logo {
                 margin-left: 50px;
                 width: 10%;
+                @media screen and (max-width: 900px) {
+                    
+                    margin: 0;
+           
+            
+                }
 
                 img {
                     width: 100%;
-                    vertical-align: middle;
+                    @media screen and (max-width: 900px) {
+                        width: 70px
+                
+                    }
+                    
                 }
             }
         }
@@ -284,8 +370,14 @@
 
             justify-self: end;
             text-decoration: none;
-            padding: 15px 50px 0 0;
+            margin: 15px 50px 0 0;
             font-size: 1.4em;
+            @media screen and (max-width: 900px) {
+                margin: 0;
+                width: 50%;
+                
+        
+            }
 
             &:visited {
                 color: #404040;
@@ -303,6 +395,14 @@
         justify-content: center;
         font-family: 'Roboto', sans-serif;
         margin: 100px 50px 0 70px;
+        @media screen and (max-width: 900px) {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            margin-top: 20px;
+            
+    
+        }
 
 
 
@@ -313,19 +413,28 @@
             color: whitesmoke;
             font-size: 1.3em;
             grid-template-rows: 2fr 3fr 1fr 1fr 50px;
-            padding-left: 50px;
-            padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+            margin-right: 20px;
             border-radius: 0 5PX 5PX 0;
             border: 1px outset rgba(#d88331, $alpha: 0.7);
+            @media screen and (max-width: 900px) {
+               margin: 0;
+               width: 80%;
+               margin-left: 30px;
+             
+        
+            }
+            
 
             &__titre {
-                padding-top: 10px;
+                margin-top: 10px;
 
             }
 
             &__prix {
                 justify-self: end;
-                padding-right: 20px;
+                margin-right: 20px;
             }
 
             &__quantite {
@@ -344,6 +453,11 @@
             width: 500px;
             justify-self: end;
             border: 1px outset rgba(#9760e6, $alpha: 0.7);
+            @media screen and (max-width: 900px) {
+                width: 100%
+                
+        
+            }
 
 
         }
@@ -356,12 +470,18 @@
         .presentation {
 
             &__titre {
-                padding-left: 150px;
-                padding-top: 200px;
+                margin-left: 150px;
+                margin-top: 200px;
                 letter-spacing: 3px;
                 color: #9760e6;
                 font-size: 2.5em;
                 font-family: 'Gochi Hand', cursive;
+                @media screen and (max-width: 900px) {
+                    
+                    margin: 0;
+                 
+            
+                }
 
 
 
@@ -385,6 +505,12 @@
                 line-height: 1.5em;
                 font-family: 'Roboto', sans-serif;
                 text-align: justify;
+                @media screen and (max-width: 900px) {
+                    text-align: justify;
+                    margin: 0;
+                    width: 100%;
+            
+                }
 
             }
 
@@ -396,20 +522,25 @@
             flex-direction: column;
 
             .produits {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                
                 font-family: 'Roboto', sans-serif;
                 height: 1200px;
+                
 
                 .produit {
 
+                    margin-bottom: 50px;
                     display: flex;
                     transition: all .2s ease-in-out;
                     cursor: pointer;
                     justify-content: center;
                     margin: 2% 20% 2% 20%;
                     border: 2px ridge rgba(#d88331, $alpha: 0.7);
+                    @media screen and (max-width: 900px) {
+                        display: flex;
+                        margin: 0;
+                
+                    }
 
                     &:hover {
                         transform: scale(1.05);
@@ -455,7 +586,17 @@
                 margin-bottom: 100px;
                 display: flex;
                 justify-content: space-around;
-                padding: 0 20% 0 20%;
+                margin: 0 20% 0 20%;
+                 @media screen and (max-width: 900px) {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        margin: 0;
+                        margin: 0;
+                        margin-bottom: 200px;
+                        
+                
+                    }
 
                 &__btn-teddy,
                 &__btn-camera,
@@ -469,6 +610,8 @@
                     border: 1px solid rgba(#c0baba, $alpha: 0.8);
                     color: whitesmoke;
                     transition: all .2s ease-in-out;
+                    
+                   
 
                     &:active {
                         outline: none;
