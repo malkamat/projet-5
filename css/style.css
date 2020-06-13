@@ -37,9 +37,9 @@
   .body {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
-    min-height: 0;
+    height: auto;
   }
 }
 .body .confirmation__titre {
@@ -295,8 +295,7 @@
 }
 @media screen and (max-width: 900px) {
   .body .header__panier {
-    margin: 0;
-    width: 50%;
+    display: inline-block;
   }
 }
 .body .header__panier:visited {
@@ -362,6 +361,13 @@
     width: 100%;
   }
 }
+@media screen and (max-width: 900px) {
+  .body .section .presentation {
+    padding-left: 20px;
+    padding-right: 30px;
+    margin: 0;
+  }
+}
 .body .section .presentation__titre {
   margin-left: 150px;
   margin-top: 200px;
@@ -372,6 +378,8 @@
 }
 @media screen and (max-width: 900px) {
   .body .section .presentation__titre {
+    padding-bottom: 20px;
+    padding-top: 20px;
     margin: 0;
   }
 }
@@ -403,9 +411,20 @@
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 900px) {
+  .body .section .liste {
+    display: flex;
+    justify-content: center;
+  }
+}
 .body .section .liste .produits {
   font-family: "Roboto", sans-serif;
-  height: 1200px;
+  height: auto;
+}
+@media screen and (max-width: 900px) {
+  .body .section .liste .produits {
+    padding-left: 20px;
+  }
 }
 .body .section .liste .produits .produit {
   margin-bottom: 50px;
@@ -419,7 +438,10 @@
 @media screen and (max-width: 900px) {
   .body .section .liste .produits .produit {
     display: flex;
+    flex-direction: column;
     margin: 0;
+    margin-bottom: 30px;
+    width: 90%;
   }
 }
 .body .section .liste .produits .produit:hover {
@@ -447,6 +469,11 @@
   font-family: "Roboto", sans-serif;
   text-align: center;
 }
+@media screen and (max-width: 900px) {
+  .body .section .liste__titre {
+    padding: 20px 30px 20px 0;
+  }
+}
 .body .section .liste .liste-selection {
   margin-bottom: 100px;
   display: flex;
@@ -457,9 +484,6 @@
   .body .section .liste .liste-selection {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin: 0;
-    margin: 0;
     margin-bottom: 200px;
   }
 }
@@ -473,6 +497,11 @@
   border: 1px solid rgba(192, 186, 186, 0.8);
   color: whitesmoke;
   transition: all 0.2s ease-in-out;
+}
+@media screen and (max-width: 900px) {
+  .body .section .liste .liste-selection__btn-teddy, .body .section .liste .liste-selection__btn-camera, .body .section .liste .liste-selection__btn-furniture {
+    margin-bottom: 20px;
+  }
 }
 .body .section .liste .liste-selection__btn-teddy:active, .body .section .liste .liste-selection__btn-camera:active, .body .section .liste .liste-selection__btn-furniture:active {
   outline: none;

@@ -45,9 +45,9 @@
   @media screen and (max-width: 900px) {
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: start;
         flex-direction: column;
-        min-height: 0;
+        height: auto;
      
 
     }
@@ -381,8 +381,10 @@
             margin: 15px 50px 0 0;
             font-size: 1.4em;
             @media screen and (max-width: 900px) {
-                margin: 0;
-                width: 50%;
+                
+                
+                display: inline-block;
+
                 
         
             }
@@ -476,6 +478,13 @@
 
 
         .presentation {
+            @media screen and (max-width: 900px) {
+                padding-left: 20px;
+                padding-right: 30px;
+                margin: 0;
+             
+        
+            }
 
             &__titre {
                 margin-left: 150px;
@@ -485,7 +494,8 @@
                 font-size: 2.5em;
                 font-family: 'Gochi Hand', cursive;
                 @media screen and (max-width: 900px) {
-                    
+                    padding-bottom: 20px;
+                    padding-top: 20px;
                     margin: 0;
                  
             
@@ -528,11 +538,21 @@
             margin-top: 100px;
             display: flex;
             flex-direction: column;
+            @media screen and (max-width: 900px) {
+                display: flex;
+                justify-content: center;
+             
+        
+            }
 
             .produits {
                 
                 font-family: 'Roboto', sans-serif;
-                height: 1200px;
+                height: auto;
+                @media screen and (max-width: 900px) {
+                    padding-left: 20px;
+            
+                }
                 
 
                 .produit {
@@ -546,7 +566,10 @@
                     border: 2px ridge rgba(#d88331, $alpha: 0.7);
                     @media screen and (max-width: 900px) {
                         display: flex;
+                        flex-direction: column;
                         margin: 0;
+                        margin-bottom: 30px;
+                        width: 90%;
                 
                     }
 
@@ -567,6 +590,7 @@
 
                         &__titre {
                             text-align: center;
+                            
                         }
 
 
@@ -585,6 +609,11 @@
                 margin-bottom: 50px;
                 font-family: 'Roboto', sans-serif;
                 text-align: center;
+                @media screen and (max-width: 900px) {
+                    padding: 20px 30px 20px 0;
+                 
+            
+                }
 
 
 
@@ -598,9 +627,7 @@
                  @media screen and (max-width: 900px) {
                         display: flex;
                         flex-direction: column;
-                        justify-content: space-around;
-                        margin: 0;
-                        margin: 0;
+                        
                         margin-bottom: 200px;
                         
                 
@@ -618,6 +645,11 @@
                     border: 1px solid rgba(#c0baba, $alpha: 0.8);
                     color: whitesmoke;
                     transition: all .2s ease-in-out;
+                    @media screen and (max-width: 900px) {
+                        margin-bottom: 20px;
+                     
+                
+                    }
                     
                    
 
