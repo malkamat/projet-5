@@ -1,3 +1,7 @@
+// déclaration des variables globales 
+// déclaration des variables globales 
+// déclaration des variables globales 
+
 const boutonViderPanier = document.querySelector(".boutons-panier__vider-panier")
 const boutonContinuerAchats = document.querySelector(".boutons-panier__continuer-achats")
 const boutonCommander = document.querySelector(".commande__bouton")
@@ -11,6 +15,10 @@ const important = document.querySelector(".commande__important")
 const total = document.querySelector(".commande__total")
 let totalEuros = 0
 
+// boucle pour calculer le total des articles du panier 
+// boucle pour calculer le total des articles du panier 
+// boucle pour calculer le total des articles du panier 
+
 for (let i = 0; i < panier.length; i++) {
   totalEuros += panier[i].quantite*panier[i].price
   if (panier.length > 0) {
@@ -19,6 +27,10 @@ for (let i = 0; i < panier.length; i++) {
   }
 }
 
+
+// Si le panier n'est pas vide, on créer les éléments qu'il contient 
+// Si le panier n'est pas vide, on créer les éléments qu'il contient 
+// Si le panier n'est pas vide, on créer les éléments qu'il contient 
 
 if (totalPanier !== 0) {
 
@@ -44,7 +56,9 @@ if (totalPanier !== 0) {
 
 }
 
-
+// logique des boutons pour modifier ou supprimer un article de facon isolé et boutons pour vider le panier et continuer ses achats 
+// logique des boutons pour modifier ou supprimer un article de facon isolé et boutons pour vider le panier et continuer ses achats 
+// logique des boutons pour modifier ou supprimer un article de facon isolé et boutons pour vider le panier et continuer ses achats 
 
 const boutonSupprimerArticle = document.querySelectorAll(".ligne-panier-boutons__vider-panier")
 const boutonModifierArticle = document.querySelectorAll(".ligne-panier-boutons__modifier")
@@ -73,15 +87,30 @@ boutonContinuerAchats.addEventListener("click", function (e) {
 })
 
 
+//Ici la logique du bonton commander 
+// Ici la logique du bonton commander 
+// Ici la logique du bonton commander 
+
 
 boutonCommander.addEventListener("click", function (e) {
 
+  // Si une des valeurs du formulaire n'est pas défini on affiche un message indiquant de remplir le formulaire 
+// Si une des valeurs du formulaire n'est pas défini on affiche un message indiquant de remplir le formulaire 
+// Si une des valeurs du formulaire n'est pas défini on affiche un message indiquant de remplir le formulaire 
 
   if (!nom.value || !prenom.value || !adresse.value || !ville.value || !email.value) {
     important.innerHTML = "Veuillez renseigner tous les champs"
+// Si le formulaire est bien rempli mais le panier vide on affiche un message d'erreur 
+// Si le formulaire est bien rempli mais le panier vide on affiche un message d'erreur 
+// Si le formulaire est bien rempli mais le panier vide on affiche un message d'erreur 
+
   } else if (panier.length == 0) {
     important.innerHTML = "Votre panier est bien vide pour passer une commande "
   }
+
+  // Si le formulaire est bien rempli et le panier plein on récupere les valeurs du formulaire en créant l'objet newContact et les ids des articles du panier pour envoyer la commande bien formaté au serveur 
+// Si le formulaire est bien rempli et le panier plein on récupere les valeurs du formulaire en créant l'objet newContact et les ids des articles du panier pour envoyer la commande bien formaté au serveur 
+// Si le formulaire est bien rempli et le panier plein on récupere les valeurs du formulaire en créant l'objet newContact et les ids des articles du panier pour envoyer la commande bien formaté au serveur 
    else {
 
     class Contact {
@@ -138,6 +167,10 @@ boutonCommander.addEventListener("click", function (e) {
       }
 
     }
+
+    // boucles pour parcourir les éléments du panier afin de savoir à quelle api il faut envoyer la réponse puis on stock cette réponse dans le localStorage 
+// boucles pour parcourir les éléments du panier afin de savoir à quelle api il faut envoyer la réponse puis on stock cette réponse dans le localStorage 
+// boucles pour parcourir les éléments du panier afin de savoir à quelle api il faut envoyer la réponse puis on stock cette réponse dans le localStorage 
     panier.map(element => {
 
 

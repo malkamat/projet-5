@@ -1,3 +1,7 @@
+// Code servant à afficher le total d'article dans le header des différentes pages de l'appli 
+// Code servant à afficher le total d'article dans le header des différentes pages de l'appli 
+// Code servant à afficher le total d'article dans le header des différentes pages de l'appli 
+
 const lienPanier = document.querySelector(".header__panier")
 const panier = []
 let totalPanier = 0

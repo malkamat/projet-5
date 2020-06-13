@@ -1,20 +1,40 @@
+// déclaration des variables globales 
+// déclaration des variables globales 
+// déclaration des variables globales 
 const params = (new URL(document.location)).searchParams;
 const produit = params.get('produit');
 const id = params.get('id');
 const categorie = params.get("produit")
 const app = document.querySelector(".preview-produit")
 
-
-
 const api = `http://localhost:3000/api/${produit}/${id}`
 
 
+// appel sur l'api du produit séléctioné sur la page principal 
+// appel sur l'api du produit séléctioné sur la page principal 
+// appel sur l'api du produit séléctioné sur la page principal 
 
-fetch(api)
-  .then(blob => blob.json())
-  .then(data => afficher(data))
 
+  const getProduit = async function () {
+    try {
+      let response = await fetch(api)
+      if(response.ok) {
+        let data = await response.json()
+        afficher(data)
+      } else {
+        console.error(response.status)
+      }
+    } catch (e) {
+      console.log(e)
+  
+    }
+  }
 
+  getProduit()
+
+  // On construit le code html pour afficher le produit  
+// On construit le code html pour afficher le produit  
+// On construit le code html pour afficher le produit  
 
 function afficher(data) {
   const article = `        
@@ -45,12 +65,20 @@ function afficher(data) {
   const panierBouton = document.querySelector(".preview-produit-description__panier")
   const boutonQuantite = document.querySelector(".preview-produit-description__quantite")
 
+  // on séléctionne une quantité et celle ci modifie le total sur la fiche produit 
+// on séléctionne une quantité et celle ci modifie le total sur la fiche produit 
+// on séléctionne une quantité et celle ci modifie le total sur la fiche produit 
+
   boutonQuantite.addEventListener('input', function (e) {
     const prix = document.querySelector(".preview-produit-description__prix")
     const total = (data.price / 100) * (boutonQuantite.options.selectedIndex + 1)
     prix.innerHTML = `${total} €`
 
   })
+
+  // bouton pour ajouter l'article et ses informations dans le localStorage pour les utiliser pour le panier 
+// bouton pour ajouter l'article et ses informations dans le localStorage pour les utiliser pour le panier 
+// bouton pour ajouter l'article et ses informations dans le localStorage pour les utiliser pour le panier 
   panierBouton.addEventListener("click", function (e) {
     const nb = boutonQuantite.options.selectedIndex + 1
 
